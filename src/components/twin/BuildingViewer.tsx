@@ -251,7 +251,7 @@ function RoomShell({
       </mesh>
       <pointLight
         position={[0, base + WALL_H - 0.4, 0]}
-        intensity={risky ? 10 : 6}
+        intensity={risky ? 26 : 18}
         distance={11}
         color={risky ? "#ff6b63" : "#cfefff"}
       />
@@ -334,7 +334,7 @@ function WalkInterior({
               emissiveIntensity={2}
             />
           </mesh>
-          <pointLight position={[x, base + WALL_H - 0.5, 0]} intensity={8} distance={14} color="#9fe9ff" />
+          <pointLight position={[x, base + WALL_H - 0.5, 0]} intensity={22} distance={14} color="#9fe9ff" />
         </group>
       ))}
       {rooms.map((r) => (
@@ -363,7 +363,7 @@ function WalkRig({
 }) {
   const { camera, gl } = useThree();
   const keys = useRef<Record<string, boolean>>({});
-  const yaw = useRef(Math.PI);
+  const yaw = useRef(0);
   const pitch = useRef(0);
   const vel = useRef(new THREE.Vector3());
   const bob = useRef(0);
@@ -411,7 +411,7 @@ function WalkRig({
 
   useEffect(() => {
     camera.position.set(-2, floor * FLOOR_HEIGHT + EYE, 10);
-    yaw.current = Math.PI;
+    yaw.current = 0;
     pitch.current = 0;
     controls.current.target = null;
   }, [floor, camera, controls]);
@@ -497,7 +497,7 @@ function Scene({
     <>
       <color attach="background" args={["#070d17"]} />
       <fog attach="fog" args={["#070d17", mode === "walk" ? 18 : 45, mode === "walk" ? 60 : 120]} />
-      <ambientLight intensity={mode === "walk" ? 0.32 : 0.5} />
+      <ambientLight intensity={mode === "walk" ? 0.75 : 0.5} />
       <hemisphereLight args={["#7fe7ff", "#0b1220", 0.45]} />
       <directionalLight
         position={[18, 26, 14]}
