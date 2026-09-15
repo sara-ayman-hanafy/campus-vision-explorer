@@ -105,7 +105,7 @@ export function SpaceMixChart() {
       <div className="h-56">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
-            <Pie data={data} dataKey="value" nameKey="name" innerRadius={45} outerRadius={75} paddingAngle={3}>
+            <Pie data={data} dataKey="value" nameKey="name" innerRadius={45} outerRadius={75} paddingAngle={3} isAnimationActive={false}>
               {data.map((d) => (
                 <Cell key={d.name} fill={ROOM_COLORS[d.name as RoomType]} stroke="none" />
               ))}

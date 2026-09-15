@@ -201,7 +201,7 @@ function Scene({ activeFloor, selectedId, onSelect, mode }: ViewerProps) {
 
 export default function BuildingViewer(props: ViewerProps) {
   return (
-    <Canvas shadows camera={{ position: [22, 20, 30], fov: 55 }} dpr={[1, 2]}>
+    <Canvas shadows camera={{ position: [24, 22, 36], fov: 52 }} dpr={[1, 2]}>
       <Suspense fallback={null}>
         <Scene {...props} />
       </Suspense>
