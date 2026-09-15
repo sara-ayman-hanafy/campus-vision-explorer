@@ -154,7 +154,7 @@ function Index() {
                 <div className="pointer-events-none absolute bottom-3 left-3 rounded-lg border border-border bg-background/80 px-3 py-2 text-[11px] text-muted-foreground backdrop-blur">
                   {mode === "orbit"
                     ? "Drag to rotate · scroll to zoom · click a room to inspect"
-                    : "Click the scene to lock the mouse · WASD to walk · Shift to run · Esc to exit"}
+                    : "Drag to look · on-screen pad to move · pick a room in “Walk to” and it walks you there"}
                 </div>
               </div>
 
