@@ -167,7 +167,13 @@ function Wall({
   onClick?: () => void;
 }) {
   return (
-    <mesh position={position} castShadow receiveShadow material={material} onClick={onClick}>
+    <mesh
+      position={position}
+      castShadow
+      receiveShadow
+      material={material}
+      onClick={() => onClick?.()}
+    >
       <boxGeometry args={size} />
     </mesh>
   );
